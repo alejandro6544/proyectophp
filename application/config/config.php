@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] =''; /*'http://localhost:8000/index.php/codigofacilito/recibirDatos';*/
+$config['base_url'] ='http://localhost/CodeIgniter-2.2.6/'; /*'http://localhost:8000/index.php/codigofacilito/recibirDatos';*/
 
 /*
 |--------------------------------------------------------------------------

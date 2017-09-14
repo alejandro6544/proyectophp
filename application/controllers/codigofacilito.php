@@ -20,10 +20,13 @@ class Codigofacilito extends CI_Controller {
     }
 
     function index() {
+       
         $this->load->library('menu', array('Inicio', 'Contacto', 'Curso'));
         $data['mi_menu'] = $this->menu->construirMenu();
         $this->load->view('codigofacilito/headers');
-        $this->load->view('codigofacilito/bienvenido', $data);
+        $this->load->view('codigofacilito/bienvenido', $data)
+                ;
+               
     }
 
     function ayuda() {
@@ -36,6 +39,7 @@ class Codigofacilito extends CI_Controller {
         $this->load->view('codigofacilito/formulario');
     }
     function recibirDatos(){
+        
         $data = array (
             'identificacion' => $this->input->post('identificacion'),
             'nombre' => $this->input->post('nombre'));

@@ -19,8 +19,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+           
             $dato['string'] = 'hola todos';
-		$this->load->view('welcome_message', $dato);
+		
+                $this->load->view('codigofacilito/formulario');
 	}
 }
 
