@@ -22,7 +22,7 @@ class Welcome extends CI_Controller {
            
             $dato['string'] = 'hola todos';
 		
-                $this->load->view('codigofacilito/formulario');
+                $this->load->view('usuarios/formulario');
 	}
 }
 

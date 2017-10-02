@@ -1,4 +1,4 @@
-<?php echo form_open('codigofacilito/recibirDatos') ?>
+<?php echo form_open('usuarios/recibirDatos') ?>
 <?php
 $nombre = array(
     'name' => 'nombre',

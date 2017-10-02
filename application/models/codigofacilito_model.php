@@ -9,6 +9,19 @@ class Codigofacilito_model extends CI_Model{
     function crearUsuario($data){
         $this->db->insert('usuarios',array('idUser'=>$data['identificacion'], 'nombreuser'=>$data['nombre']));
     }
+    
+    function obtenerUsuarios(){
+        $query=$this->db->get('usuarios');
+        if($query->num_rows()>0)return $query;
+        else return false;
+    }
+    
+    function obtenerUsuariosSegmento($id){
+        $this->db->where('idUser',$id);
+        $query=$this->db->get('usuarios');
+        if($query->num_rows()>0)return $query;
+        else return false;
+    }
 }
 
 ?>
