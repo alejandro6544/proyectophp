@@ -4,11 +4,6 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 class Usuarios extends CI_Controller {
 
@@ -37,7 +32,6 @@ class Usuarios extends CI_Controller {
     }
 
     function recibirDatos() {
-
         $data = array(
             'identificacion' => $this->input->post('identificacion'),
             'nombre' => $this->input->post('nombre'));
@@ -48,17 +42,17 @@ class Usuarios extends CI_Controller {
 
     function editar() {
         $data['id'] = $this->uri->segment(3);
-        $data['bcurso'] = $this->codigofacilito_model->obtenerUsuariosSegmento($data['id']);
+        $data['usuario'] = $this->codigofacilito_model->obtenerUsuariosSegmento($data['id']);
         $this->load->view('codigofacilito/headers');
         $this->load->view('usuarios/editar', $data);
     }
 
     function actualizar() {
         $data = array(
-            'identificacion' => $this->input->post('identificacion'),
+            'identificacion' => '741', //esta quemado, debe ser dimanico
             'nombre' => $this->input->post('nombre')
         );
-
+        
         $this->codigofacilito_model->actualizarUsuario($this->uri->segment(3), $data);
         $this->load->view('codigofacilito/headers');
         $this->load->view('codigofacilito/bienvenido');
