@@ -1,16 +1,19 @@
  
 <?php
-if(isset($usuariosw)){
-foreach ($usuariosw->result() as $usuario){?>
+if ($usuariosw) {
+    foreach ($usuariosw->result() as $usuario) {
+        ?>
+      
+        <ul>
 
-<ul>
-    <li><?= $usuario->nombreuser;?></li>
-</ul>
-<?php }?>
-<?php }else{
-     echo "<p> Error en la";
+            <li><a href="<?= $usuario->idUser; ?>"><?= $usuario->nombreuser; ?></a></li>
+        </ul>
+    <?php } ?>
+<?php
+} else {
+    echo "<p> Usuario no enocntrado</p>";
 }
 ?>
-   
+
 </body>
 </html>
