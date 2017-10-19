@@ -42,6 +42,7 @@ class Usuarios extends CI_Controller {
 
     function editar() {
         $data['id'] = $this->uri->segment(3);
+       // echo 'dddd '+$this->uri->segment(3);
         $data['usuario'] = $this->codigofacilito_model->obtenerUsuariosSegmento($data['id']);
         $this->load->view('codigofacilito/headers');
         $this->load->view('usuarios/editar', $data);
@@ -49,11 +50,13 @@ class Usuarios extends CI_Controller {
 
     function actualizar() {
         $data = array(
-            'identificacion' => '741', //esta quemado, debe ser dimanico
-            'nombre' => $this->input->post('nombre')
-        );
-        
-        $this->codigofacilito_model->actualizarUsuario($this->uri->segment(3), $data);
+            'identificacion' => $this->uri->segment(3),
+            'nombre' => $this->input->post('nombre'));
+        //$data = array(
+          //  'identificacion' => $this->input->post('identificacion'),//'741', //esta quemado, debe ser dimanico
+           // 'nombre' => $this->input->post('nombre'));
+      // echo 'ssss'+ $this->uri->segment(3);
+        $this->codigofacilito_model->actualizarUsuario($this->uri->segment(3),$data);
         $this->load->view('codigofacilito/headers');
         $this->load->view('codigofacilito/bienvenido');
     }

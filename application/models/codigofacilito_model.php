@@ -31,15 +31,16 @@ class Codigofacilito_model extends CI_Model {
             return false;
     }
 
-    function actualizarUsuario($id, $data) {
+    function actualizarUsuario($id,$data) {
         $datos = array(
             'idUser' => $data['identificacion'],
             'nombreuser' => $data['nombre']
         );
-        $this->db->where('idUser', $id);
+        $this->db->where('idUser',$id);
         $query = $this->db->update('usuarios', $datos);
     }
 
+    
 }
 
 ?>

@@ -16,7 +16,7 @@ $identificacion = array(
 
 <br><br><br>
 
-<?= form_label('Identificacion : ', 'identificacion') ?> 
+<?= form_label('Número id: ', 'identificacion') ?> 
 <?= form_input($identificacion) ?>
 <br><br><br>
 <label>
